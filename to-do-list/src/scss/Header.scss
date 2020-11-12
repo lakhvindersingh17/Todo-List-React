@@ -1,0 +1,21 @@
+.Header{
+
+    display: flex;
+    justify-content:space-around;
+    // width:100%;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1%;
+    background-color: rgb(6, 178, 190);
+    color: white;
+
+    #heading{
+        flex:1;
+    }
+    h1{
+        margin:0.5% auto;
+    }
+}
+
+
+

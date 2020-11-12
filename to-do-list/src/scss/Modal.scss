@@ -1,0 +1,161 @@
+.modal{
+
+    position:fixed;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.425);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .modal-container{
+        display: flex;
+        background-color: rgb(248, 248, 248);
+        width: 50vw;
+        height: 47vh;
+        border-radius:10px;
+        border:2px solid rgb(182, 180, 180);
+        padding:1%;
+        flex-direction: column;
+        box-shadow: 7px 7px 10px  grey;
+        
+
+    #closeBtn{
+            position:relative;
+            // top:-120px;
+            width: fit-content;
+            height: fit-content;
+            left:98%;
+            // right:2px;
+            // left:120;
+            flex:0;
+            &:hover{
+                cursor: pointer;
+            }
+            
+        }
+        
+    .modal-content{
+        display: flex;
+        flex:3;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        $border-color:rgb(189, 186, 186);
+        
+        @mixin btn-style{
+            width: max-content;
+            background-color: rgb(4, 70, 145);
+            color: white;
+            border-radius: 5px;
+            padding: 4% 5% ;
+            border: 2px solid rgb(5, 112, 184);
+            background-color: rgb(7, 130, 212);
+            &:hover{
+                cursor: pointer;
+            }
+            
+        }
+
+        .task-operations{
+            padding-top: 2%;
+            display: flex;
+            
+            flex-direction: column;
+            flex-basis: 35%;
+            align-items: center;
+
+            #update-status{
+                flex:1;
+                // color:rgb(5, 74, 114);
+                font-weight: 600;
+                select{
+                    border:2px solid $border-color;
+                    padding:1% 0%;
+                    border-radius: 5px;
+                    // background-color: rgb(7, 137, 243);
+                    // color:white;
+                }
+            }
+            #delete-task{
+                flex:1;
+                color: brown;
+                font-weight: 600;
+                font-size: large;
+                &:hover{
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+
+            #task-update{
+                flex:4;
+            #edit-btn{
+                @include btn-style();  
+                
+            }
+
+            .updateForm{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                align-items: center;
+                h3{
+                    margin-top: 0;
+                    color: rgb(5, 74, 114);
+                }
+                label{
+                    font-weight: 500;
+                }
+                input{
+                    margin-bottom:5%;
+                    padding: 2%;
+                    border: 2px solid rgb(189, 186, 186);
+                    border-radius: 5px;
+                }
+
+                #submit-btn{
+                    @include btn-style();
+                }
+            }
+
+        }
+            
+
+        }
+
+        
+        .informationContainer{
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                text-align: center;
+                color:rgb(5, 116, 116);
+                color: rgb(5, 74, 114);
+            }
+            $margin-val:3%;
+            .info-row{
+                margin:$margin-val 0;
+                // font-weight: bold;
+
+            .label{
+                font-weight: bold;
+                padding:$margin-val 0;
+            }
+            
+        }
+
+    }
+    }
+}
+}
+
+// #closeBtn{
+//     width: fit-content;
+//     height: fit-content;
+//     position: fixed;
+//     top:10px;
+//     right:5px;
+// }

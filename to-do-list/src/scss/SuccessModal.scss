@@ -1,0 +1,20 @@
+.success-Modal{
+
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    background-color: rgb(0, 180, 45);
+    .modal-Body{
+        padding: 0.3% 0px;
+        color:white;
+    }
+
+    #close-btn{
+        position: relative;
+        left:38%;
+    }
+}

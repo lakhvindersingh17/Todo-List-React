@@ -1,0 +1,62 @@
+@use './AllTask.scss' as Parent;
+
+.TaskContainer{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width:40vw;
+    
+    border: 2px solid rgb(27, 179, 218);
+    margin:1.5%;
+    padding:1%;
+    padding-bottom:2px;
+    // padding:0px 1% ;
+    padding-top: 0.5%;
+    border-radius: 5px;
+    box-shadow: 3px 4px 7px rgb(34, 34, 34);
+    // color:blue;
+    transition: 0.5s;
+    // transition-delay: 0.5s;
+    background-color: white;
+    color:white;
+
+    color:Parent.$heading-color;
+    
+    &:hover{
+        cursor: pointer;
+        padding:1.2%;
+        
+    }
+    .label{
+            font-weight: 500;
+        }
+    .Information{
+        margin-top:2%;
+        margin-bottom: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        flex-wrap: wrap;
+       
+        
+    }
+
+}
+
+// .piority{
+//     color:red;
+// }
+
+#tool{
+   
+    margin: 1%;
+    padding: 2%;
+    color:brown;
+    font-size: larger;
+    font-weight: bold;
+
+}
