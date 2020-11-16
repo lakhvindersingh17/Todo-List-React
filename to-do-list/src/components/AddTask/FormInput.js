@@ -1,8 +1,9 @@
-
+import { completionTimeInput, taskNameInput } from "../../store/actions/TaskFormAction";
+import { connect } from 'react-redux';
 
 let FormInput=(props)=>{
 
-    let taskName=props.name;
+    let taskName=props.taskName;
     let nameUpdator=props.nameUpdator;
     let timeUpdator=props.timeUpdator;
     let expectedTime=props.expectedTime;
@@ -18,4 +19,21 @@ let FormInput=(props)=>{
 
 }
 
-export default FormInput;
+let mapStateToProps=state=>{
+
+    return{
+        taskName:state.taskName,
+        expectedTime:state.expectedTime
+    }
+}
+
+let mapDispatchToProps=dispatch=>{
+
+    return{
+        nameUpdator:(value)=>dispatch(taskNameInput(value)),
+        timeUpdator:(value)=>dispatch(completionTimeInput(value))
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(FormInput);

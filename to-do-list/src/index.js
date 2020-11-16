@@ -5,11 +5,16 @@ import reportWebVitals from './reportWebVitals';
 import Header from './components/Header/Header'
 import {BrowserRouter} from 'react-router-dom'
 import NavbarRoutes from './components/Header/NavbarRoutes'
+import { Provider } from 'react-redux';
+import store from './store/store'
 
 ReactDOM.render(
+  
   <BrowserRouter>
-  <Header/>
-  <NavbarRoutes/>
+    <Header/>
+    <Provider store={store}>
+    <NavbarRoutes/>
+    </Provider>
   </BrowserRouter>
 
   ,document.getElementById('root')
