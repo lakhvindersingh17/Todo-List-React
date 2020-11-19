@@ -1,8 +1,7 @@
 import FormInput from './FormInput'
 import {useState} from 'react';
 import SuccessModal from '../modal/SuccessModal'
-import { Reset } from '../../store/actionTypes/formActionTypes';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { formReset } from '../../store/actions/TaskFormAction';
 const axios= require('axios').default
 
@@ -11,19 +10,28 @@ let TaskForm=(props)=>{
     
     // let [taskName,nameUpdator]=useState('')
     // let [expectedTime,timeUpdator]=useState(undefined);
+    let timeRequired=useSelector(state=>state.expectedTime)
+    let dispatchForm=useDispatch()
     let successHandler=()=>{
         // nameUpdator('');
-        props.reset();
+        // props.reset();
+        dispatchForm(formReset())
         props.showModal(<SuccessModal text={'Task Succesfully Added'} hideModal={props.showModal}/>)
         
     }
+ 
 
     let clickHandler=()=>{
         if(props.taskName!==''){
-            let body={name:props.taskName,timeRequired:props.expectedTime,creationTime:(new Date())}
+            if(navigator.onLine){
+            let body={name:props.taskName,timeRequired:timeRequired,creationTime:(new Date())}
             axios.post('http://localhost:5000/Task',body)
             .then(()=>successHandler())
             .catch((err)=>console.log(err))
+            }
+            else{
+                props.showModal(<SuccessModal text={'Unsuccesfull Check Your Connection'} hideModal={props.showModal}/>)               
+            }
         }
     }
     console.log(props.taskName,props.expectedTime)
@@ -38,6 +46,7 @@ let TaskForm=(props)=>{
     )
 
 }
+
 let mapStateToProps=state=>{
 
     return {
@@ -54,4 +63,4 @@ let mapDispatchToProps=dispatch=>{
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(TaskForm);
+export default connect(mapStateToProps)(TaskForm);

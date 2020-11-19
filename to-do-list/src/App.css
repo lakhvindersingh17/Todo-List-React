@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+html[dir="rtl"] .modal-content{
+        
+  display: block;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

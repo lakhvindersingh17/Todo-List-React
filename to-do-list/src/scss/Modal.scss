@@ -20,22 +20,29 @@
         padding:1%;
         flex-direction: column;
         box-shadow: 7px 7px 10px  grey;
+        position: relative;
         
 
     #closeBtn{
-            position:relative;
+            position: absolute;
             // top:-120px;
             width: fit-content;
             height: fit-content;
-            left:98%;
-            // right:2px;
-            // left:120;
-            flex:0;
+            top:3%;
+            left:95%;
+            // flex:0;
             &:hover{
                 cursor: pointer;
             }
+            html[dir="rtl"]{
+                left:5%;
+            }
             
         }
+    html[dir=rtl] .modal-content{
+        
+        height: 100vh;
+    }    
         
     .modal-content{
         display: flex;
@@ -152,10 +159,7 @@
 }
 }
 
-// #closeBtn{
-//     width: fit-content;
-//     height: fit-content;
-//     position: fixed;
-//     top:10px;
-//     right:5px;
-// }
+html[dir="rtl"] .model .modal-container .modal-content #closeBtn{
+        
+    left:5%;
+}   

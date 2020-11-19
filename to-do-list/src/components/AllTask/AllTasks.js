@@ -16,21 +16,27 @@ class AllTasks extends React.Component{
         this.showModal=this.showModal.bind(this);   
         this.hideModal=this.hideModal.bind(this);                  
     }
+
+    getData=()=>{
+        fetch('http://localhost:5000/Task',{method:"GET"}).then(res=>res.json())
+        .then(data=>{
+            this.setState({data:data})
+            window.localStorage.setItem("allTask",JSON.stringify(data))
+        }).
+        catch(err=>{
+            let localData=JSON.parse(window.localStorage.getItem("allTask"))
+            this.setState({data:localData})
+        })
+    }
+
     componentDidMount=()=>{
 
-        axios.get('http://localhost:5000/Task')
-        .then(res=>res.data).then(data=>this.setState({data:data}))
-        .catch(err=>console.log(err))
+        this.getData()
     }
 
     hideModal(){
         this.setState({modal:<></>});
-        
-        axios.get('http://localhost:5000/Task')
-        .then(res=>res.data).then(data=>
-            this.setState({data:data}))
-
-        .catch(err=>console.log(err))
+        this.getData()
     }
     showModal(data){
 

@@ -16,6 +16,17 @@ class CompletedTask extends React.Component{
     }
 
     getData=()=>{
+        
+        fetch('http://localhost:5000/Task',{method:"GET"}).then(res=>res.json())
+        .then(data=>data.filter(value=>value.status=="Completed")).
+        then(data=>this.setState({data:data}))
+        
+        .catch(err=>{
+            let localData=JSON.parse(window.localStorage.getItem("allTask"))
+            .filter(value=>value.status=="Completed")    
+            this.setState({data:localData})
+        })
+        
         axios.get('http://localhost:5000/Task')
         .then(res=>res.data).then(data=>data.filter(value=>value.status=="Completed")).then(data=>this.setState({data:data}))
         .catch(err=>console.log(err))

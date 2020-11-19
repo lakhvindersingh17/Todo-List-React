@@ -23,6 +23,20 @@
     color:white;
 
     color:Parent.$heading-color;
+
+
+    @media only screen and (max-width:500px){
+        
+        width: 90vw;
+        // margin-top: 20%;
+        }
+
+    @media (min-width:800px)  and (max-width:1000px){
+        width:60vw;
+    }
+    @media (min-width:500px)  and (max-width:800px){
+        width:70vw;
+    }
     
     &:hover{
         cursor: pointer;
@@ -45,17 +59,33 @@
     }
 
 }
+#tooltip{
 
-// .piority{
-//     color:red;
-// }
+    background-color: black;
+    // padding: 2%;
+    color:white;
+    border-left: 5px transparent green;
+    border :5p solid black;
 
-// #tool{
+    div{
+        border:5px solid red;
+        border-right:5px transparent red;
+        border-left: 5px transparent red;
+
+    }
+
+}
+
+.piority{
+    color:red;
+}
+
+#tool{
    
-//     margin: 1%;
-//     padding: 2%;
-//     color:brown;
-//     font-size: larger;
-//     font-weight: bold;
+    margin: 1%;
+    padding: 2%;
+    color:brown;
+    font-size: larger;
+    font-weight: bold;
 
-// }
+}

@@ -15,7 +15,18 @@
     h1{
         margin:0.5% auto;
     }
+
+    
+
+    @media (min-width:300px) and (max-width:700px){
+        flex-direction: column;
+        .Navbar{
+            width:100%
+        }
+    }
+
 }
+
 
 
 

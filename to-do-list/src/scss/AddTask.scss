@@ -6,9 +6,10 @@
     // margin:auto;
     // width:fit-content;
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 
     .form-Container{
         width:35vw;
@@ -21,9 +22,26 @@
         border-radius: 10px;
         color:rgba(0, 0, 0);
         box-shadow: 2px 2px 7px 2px rgb(71, 64, 64);
-        margin-top:10%;
+        // margin-top:10%;
     // color:white;
     // background-color: rgb(4, 95, 122);
+    // @media screen {
+        
+    // }
+    @media only screen and (max-width:500px){
+        
+            width: 90vw;
+            // margin-top: 20%;
+    }
+    
+    @media (min-width:800px)  and (max-width:1000px){
+        width:50vw;
+    }
+    @media (min-width:500px)  and (max-width:800px){
+        width:70vw;
+    }
+
+
     h1{
         margin-top: 5%;
         width:fit-content;
@@ -34,7 +52,7 @@
         display: flex;
         justify-content: center;
         
-    button{
+        button{
        
         width: max-content;
         color: white;
@@ -44,18 +62,25 @@
         background-color: rgb(7, 130, 212);
         &:hover{
             cursor: pointer;
+                }
         }
-    }
 
-}
+
+
+    }
 
     .taskInput{
         $margin:3%;
         display: flex;
         flex-direction: column;
         padding: 1%;
+        margin:$margin;
+        #TextField{
+
+            margin-bottom: 1%;
+        }
         label{
-            padding:1% 0px;
+            // padding:1% 0px;
             // margin:0px $margin;
             font-size: large;
         }
@@ -63,11 +88,34 @@
 
             width:30vw;
             margin:$margin 0px;
-            padding: 1.5%;
-            margin-top:0px;
+            // padding: 1.5%;
+            // margin-top:0px;
             border:2px solid rgb(207, 202, 192);
-            border-radius: 5px;
+            // border-radius: 5px;
         }
     }
 }
+
+@media only screen and (max-width:400px){
+
+    .form-Container{
+        width: 90vw;
+        margin-top: 20%;
+    }
+}
+}
+
+#TextField{
+
+    margin-bottom: 1%;
+    width:30vw;
+}
+input{
+
+    width:30vw;
+    // margin:$margin 0px;
+    // padding: 1.5%;
+    // margin-top:0px;
+    border:2px solid rgb(207, 202, 192);
+    // border-radius: 5px;
 }

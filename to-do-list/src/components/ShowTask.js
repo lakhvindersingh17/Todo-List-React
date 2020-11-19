@@ -1,6 +1,9 @@
 import { useState,useRef } from 'react';
 import '../scss/ShowTask.scss'
 import PiorityToolTip from './PiorityTask/PiorityToolTip'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Overlay from 'react-bootstrap/Overlay'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 let ShowTask=(props)=>{
     
@@ -45,7 +48,11 @@ let ShowTask=(props)=>{
 
     
     return(
-
+        <OverlayTrigger
+    placement="left"
+    overlay={
+    <Tooltip className="tooltip"><div id="arrow"></div>Check out this avatar</Tooltip>}
+        >
         <div className="TaskContainer" onMouseEnter={()=>showPiority()} onMouseLeave={()=>hidePiority()} onClick={props.onClick} style={{borderColor:border}}>
     
         <h2>{name}</h2>
@@ -57,7 +64,10 @@ let ShowTask=(props)=>{
         {piorityToolTip}
         {timeLable}
     <progress max={timeRequired} value={timeTaken}  style={{width:"100%"}}></progress>
-    </div>)
+    </div>
+    </OverlayTrigger>
+
+    )
 }
 
 export default ShowTask;
